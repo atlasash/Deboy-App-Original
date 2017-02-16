@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" href="dist/css/framework7.material.min.css">
+    <!-- Path to Framework7 color related styles, Material Theme -->
+    <link rel="stylesheet" href="dist/css/framework7.material.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <title>Deboy</title>
+</head>
+
+<body onload="swiper.slideTo(1);">
+    <!-- Views -->
+    <div class="views" data-enhance="false">
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+
+
+        <div class="swiper-container s8">
+          <div class="swiper-wrapper" >
+            <div class="swiper-slide top_tab  button" style="">
+              <i class="material-icons" id="menu_icon" onclick="swiper.slideTo(0)" style="color:#FFF;float: left;padding: 10px;font-size:30px">dehaze</i>
+  
+              <!--<i class="material-icons" style="color:#FFF;float: left;padding-left: 5px;padding-right: 10px;font-size:40px">arrow_back</i>-->
+              <!--<span id="prog">My Span</span><br>
+              <span id="prog2">My Span</span>-->
+            </div>
+            <div class="swiper-slide" style="height: 100%">
+                <div class="swiper-container s1">
+
+                    <div class="swiper-container stop-swiping stop-swiping2 s3">
+                        <div class="swiper-wrapper clone-wrapper" style="display: none;">
+                            <div class="swiper-slide clone-slide my-slide-duplicate"></div>
+                        </div>
+                    </div>
+
+                    <!--TOP MENU-->
+                    <div class="menu-container stop-swiping stop-swiping2 stop-swiping3">
+                      <ul>
+                        <li class="button"><span>RECENT</span></li>
+                        <li class="button"><span>HIP-HOP</span></li>
+                        <li class="button"><span>RAP</span></li>
+                        <li class="button"><span>R&B</span></li>
+                        <li class="button"><span>ALTERNATIVE</span></li>
+                        <li class="myslider"></li>
+                      </ul>
+                    </div>
+
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide offcanvas_menu stop-swiping3" id="slide1" style="width:83%;overflow-y: scroll !important">
+                            <!--<span class="label-checkbox" onclick="swiper.slideTo(1)">Close Menu</span>-->
+                            <div class="sidebar-header header-cover" style="background-image: url(http://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg);">
+                                <!-- Sidebar brand image -->
+                                <div class="sidebar-image">
+                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53474/atom_profile_01.jpg">
+                                </div>
+                                <!-- Sidebar brand name -->
+                                <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+                                    john.doe@gmail.com
+                                    <b class="caret"></b>
+                                </a>
+                            </div>
+                            <ul class="menu_vert">
+                              <li>
+                                  <a href="#">
+                                      <i class="sidebar-icon md-inbox"></i>
+                                      Inbox
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#">
+                                      <i class="sidebar-icon md-star"></i>
+                                      Starred
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#">
+                                      <i class="sidebar-icon md-send"></i>
+                                      Sent Mail
+                                  </a>
+                              </li>
+                              <li>
+                                  <a href="#">
+                                      <i class="sidebar-icon md-drafts"></i>
+                                      Drafts
+                                  </a>
+                              </li>
+                              <li><a href="#home">Home</a></li>
+                              <li><a href="#news">News</a></li>
+                              <li><a href="#contact">Contact</a></li>
+                              <li><a href="#about">About</a></li>
+                            </ul>
+                        </div>
+                        <div class="swiper-slide slide_main" id="slide_main" style="">
+                            <!--MAIN DISPLAY SWIPER-->
+                            <div class="swiper-container s2">
+                              <span class="stop-swiping2 overlay"  style=""></span>
+                              <span class="stop-swiping2 EN"  style=""></span>
+                              <div class="swiper-wrapper stop-swiping slide_main_wrapper" >
+                                <div class="swiper-slide" id="slide_main_slide" >
+
+                                  <img class="stop-swiping3"  width="100%" src="img/The Scene.jpg"/>
+                                  <img class="stop-swiping3"  width="100%" src="img/Dorondo.jpg"/>
+                                  <img  class="stop-swiping3" width="100%" src="img/Movie.jpg"/>
+
+                                  <span onclick="swiper.slideTo(0)" class="btn button btn-default">Open Menu</span><br>
+                                  <button id="btn1">BTN1</button>
+                                  <div class="" style="height:200px !important;background-color: #000;color: #FFF;width:100% !important">
+                                  </div>
+                                  <span class="stop-swiping3" style="height:200px;background-color: #000;color: #FFF;width:100%">My Span</span>
+                                </div>
+                                <div class="swiper-slide" >slide 2</div>
+                                <div class="swiper-slide">slide 3</div>
+                                <div class="swiper-slide">slide 4</div>
+                                <div class="swiper-slide">slide 5</div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <!--jQuery References-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="dist/js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+    <!--Bootstrap References-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+</body>
+
+</html>
