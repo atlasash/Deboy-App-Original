@@ -47,6 +47,7 @@
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <title>Deboy</title>
 </head>
 
@@ -60,7 +61,8 @@
         <div class="swiper-container s8">
           <div class="swiper-wrapper" >
             <div class="swiper-slide top_tab  button" style="">
-              <i class="material-icons" id="menu_icon" onclick="swiper.slideTo(0)" style="color:#FFF;float: left;padding: 10px;font-size:30px">dehaze</i>
+              <!--<i class="material-icons" id="menu_icon" onclick="swiper.slideTo(0)" style="color:#FFF;float: left;padding: 10px;font-size:30px">dehaze</i>-->
+              <i class="fa fa-bars" aria-hidden="true" id="menu_icon" onclick="swiper.slideTo(0)" style="color:#FFF;float: left;padding: 10px;font-size:30px"></i>
   
               <!--<i class="material-icons" style="color:#FFF;float: left;padding-left: 5px;padding-right: 10px;font-size:40px">arrow_back</i>-->
               <!--<span id="prog">My Span</span><br>
@@ -139,7 +141,14 @@
                               <span class="stop-swiping2 EN"  style=""></span>
                               <div class="swiper-wrapper stop-swiping slide_main_wrapper" >
                                 <div class="swiper-slide" id="slide_main_slide" >
-
+                                  
+                                  <div class="module"> 
+                                    <header>
+                                      <h1>
+                                        The Scene
+                                      </h1>
+                                    </header>
+                                  </div>
                                   <img class="stop-swiping3"  width="100%" src="img/The Scene.jpg"/>
                                   <img class="stop-swiping3"  width="100%" src="img/Dorondo.jpg"/>
                                   <img  class="stop-swiping3" width="100%" src="img/Movie.jpg"/>
