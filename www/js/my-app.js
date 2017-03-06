@@ -197,25 +197,35 @@ $(document).ready(function() {
 });
 
 
-$(window).resize(function(){
+var rtime;
+var timeout = false;
+var delta = 200;
+$(window).resize(function() {
 
-  $(".myslider").css({
-    transition: "all 0.3s",
-    width: $(".menu-container ul li").eq(swiper2.activeIndex).width() + "px" ,
-    left: $(".menu-container ul li").eq(swiper2.activeIndex).position().left + "px" 
-  });
+    //to initialize main swiper
+    swiper.slideTo(0);
+    $(".myslider").css({
+      transition: "all 0.3s",
+      width: $(".menu-container ul li").eq(swiper2.activeIndex).width() + "px" ,
+      left: $(".menu-container ul li").eq(swiper2.activeIndex).position().left + "px" 
+    });
+    rtime = new Date();
+    if (timeout === false) {
+        timeout = true;
+        setTimeout(resizeend, delta);
+    }
+});
 
-  swiper.params.followFinger = true;
-  swiper.params.watchSlidesProgress = true;
-  //swiper.reInit();
-  swiper.slideTo(0);
-
-  var ww = $(".s1").height();
-  $(".s3").height(ww);
-  swiper2.reInit();
-  swiper3.reInit();
-
-})
+//function to perform after resize window
+function resizeend() {
+    if (new Date() - rtime < delta) {
+        setTimeout(resizeend, delta);
+    } else {
+        timeout = false;
+        //to reinitialize main swiper
+        swiper.slideTo(1);
+    }               
+}
 
 // Initialize your app
 var myApp = new Framework7({
@@ -608,7 +618,6 @@ function change_state(){
 
 function disableNext(){
   //setTimeout(function(){
-
 
   if(swiper.activeIndex == '1'){ 
     //swiper.params.allowSwipeToNext = false;

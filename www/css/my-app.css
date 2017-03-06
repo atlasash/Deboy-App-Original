@@ -555,7 +555,8 @@ ul.menu_vert {
   text-align: left !important;
   margin: 0;
   padding: 0;
-  width: 300px;
+  /*width: 300px;*/
+  width: 100%;
   background-color: #FFF !important;
   font-family: 'Roboto', sans-serif !important;
   overflow-y: scroll !important;
@@ -609,7 +610,8 @@ ul.menu_vert li a:hover {
 .sidebar-header {
     position: relative;
     height: 157.5px;
-    width: 300px;
+    /*width: 300px;*/
+    width: 100%;
 }
 
 .sidebar-header.header-cover {
