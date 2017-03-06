@@ -1,6 +1,7 @@
 
 $(document).ready(function() {
 
+
   $(".menu-container ul li").click(function(e) {
 
     // make sure we cannot click the slider
@@ -194,6 +195,27 @@ $(document).ready(function() {
   });
   */
 });
+
+
+$(window).resize(function(){
+
+  $(".myslider").css({
+    transition: "all 0.3s",
+    width: $(".menu-container ul li").eq(swiper2.activeIndex).width() + "px" ,
+    left: $(".menu-container ul li").eq(swiper2.activeIndex).position().left + "px" 
+  });
+
+  swiper.params.followFinger = true;
+  swiper.params.watchSlidesProgress = true;
+  //swiper.reInit();
+  swiper.slideTo(0);
+
+  var ww = $(".s1").height();
+  $(".s3").height(ww);
+  swiper2.reInit();
+  swiper3.reInit();
+
+})
 
 // Initialize your app
 var myApp = new Framework7({
@@ -449,14 +471,6 @@ var swiper = myApp.swiper('.s1',{
   }
 });
 
-$(window).resize(function(){
-  var ww = $(".s1").height();
-  $(".s3").height(ww);
-  swiper.reInit();
-  swiper2.reInit();
-  swiper3.reInit();
-})
-
 swiper8.on('onTransitionEnd', function () {
 
   swiper8.params.followFinger = true;
@@ -571,7 +585,8 @@ swiper.on('onTransitionEnd', function () {
     $(".slide_main_wrapper").removeClass("stop-swiping");
     $(".slide_main_wrapper").addClass("stop-swiping2");
     //$(".tabs").css('z-index', '0');
-    $(".menu-container").css('z-index', '1');
+    //$(".menu-container").css('z-index', '1');
+    $(".menu-container").css('z-index', '9');
     enableNext();
 
   }
