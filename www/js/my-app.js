@@ -585,8 +585,7 @@ swiper.on('onTransitionEnd', function () {
     $(".slide_main_wrapper").removeClass("stop-swiping");
     $(".slide_main_wrapper").addClass("stop-swiping2");
     //$(".tabs").css('z-index', '0');
-    //$(".menu-container").css('z-index', '1');
-    $(".menu-container").css('z-index', '9');
+    $(".menu-container").css('z-index', '1');
     enableNext();
 
   }
