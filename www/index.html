@@ -45,167 +45,160 @@
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/my-app.css">
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <!--Import Google Icon Font-->
-    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <!-- Compiled and minified CSS -->
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">-->
-    <!-- Compiled and minified JavaScript -->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>-->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!--Import jQuery before materialize.js-->
-    <!--jQuery References-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
     <title>Deboy</title>
 </head>
 
 <body onload="swiper.slideTo(1);">
-    <!-- Views -->
-    <div class="views" data-enhance="false">
-      <!-- Your main view, should have "view-main" class -->
-      <div class="view view-main">
+<!-- Views -->
+<div class="views" data-enhance="false">
+    <!-- Your main view, should have "view-main" class -->
+    <div class="view view-main">
 
 
         <div class="swiper-container s8">
-          <div class="swiper-wrapper" style="background: #e62117 !important;" >
-            <div class="swiper-slide top_tab" style="">
-              <i class="fa fa-bars " aria-hidden="true" id="menu_icon" onclick="swiper.slideTo(0)" style="color:#FFF;float: left;padding: 10px;font-size:30px"></i>
-            </div>
-            <div class="swiper-slide" style="height: 100%">
-                <div class="swiper-container s1">
+            <div class="swiper-wrapper" style="background: #e62117 !important;" >
+                <div class="swiper-slide top_tab  button" style="">
+                    <i class="fa fa-bars" aria-hidden="true" id="menu_icon" onclick="swiper.slideTo(0)" style="color:#FFF;float: left;padding: 10px;font-size:30px"></i>
+                </div>
+                <div class="swiper-slide" style="height: 100%">
+                    <div class="swiper-container s1">
 
-                    <div class="swiper-container stop-swiping stop-swiping2 s3">
-                        <div class="swiper-wrapper clone-wrapper" style="display: none;">
-                            <div class="swiper-slide clone-slide my-slide-duplicate"></div>
-                        </div>
-                    </div>
-
-                    <!--TOP MENU-->
-                    <div class="menu-container stop-swiping stop-swiping2 stop-swiping3">
-                      <ul>
-                        <li class="button"><span>RECENT</span></li>
-                        <li class="button"><span>HIP-HOP</span></li>
-                        <li class="button"><span>RAP</span></li>
-                        <li class="button"><span>R&B</span></li>
-                        <li class="button"><span>ALTERNATIVE</span></li>
-                        <li class="myslider"></li>
-                      </ul>
-                    </div>
-
-                    <div class="swiper-wrapper">
-
-                        <div class="swiper-slide offcanvas_menu stop-swiping3" id="slide1" style="width:83%;overflow-y: scroll !important">
-                            <!--<span class="label-checkbox" onclick="swiper.slideTo(1)">Close Menu</span>-->
-                            <div class="sidebar-header header-cover" style="background-image: url(http://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg);">
-                                <!-- Sidebar brand image -->
-                                <div class="sidebar-image">
-                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53474/atom_profile_01.jpg">
-                                </div>
-                                <!-- Sidebar brand name -->
-                                <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-                                    john.doe@gmail.com
-                                    <b class="caret"></b>
-                                </a>
+                        <div class="swiper-container stop-swiping stop-swiping2 s3">
+                            <div class="swiper-wrapper clone-wrapper" style="display: none;">
+                                <div class="swiper-slide clone-slide my-slide-duplicate"></div>
                             </div>
-                            <ul class="menu_vert collapsible" data-collapsible="accordion">
-                              <li>
-                                  <a href="#">
-                                      <i class="sidebar-icon md-inbox"></i>
-                                      Inbox
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="#">
-                                      <i class="sidebar-icon md-star"></i>
-                                      Starred
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="#">
-                                      <i class="sidebar-icon md-send"></i>
-                                      Sent Mail
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="#">
-                                      <i class="sidebar-icon md-drafts"></i>
-                                      Drafts
-                                  </a>
-                              </li>
-                              <li><a href="#home">Home</a></li>
-                              <li><a href="#news">News</a></li>
-                              <li><a href="#contact">Contact</a></li>
-                              <li><a href="#about">About</a></li>
-                                <li class="button">
-                                    <div class="collapsible-header"><i class="material-icons">whatshot</i>First</div>
-                                    <div class="collapsible-body"><i class="material-icons">place</i><span>Some text 1</span></div>
-                                </li>
-                                <li class="button">
-                                    <div class="collapsible-header">Second</div>
-                                    <div class="collapsible-body"><span>Some text 2</span></div>
-                                </li>
-                                <li class="button">
-                                    <div class="collapsible-header">Third</div>
-                                    <div class="collapsible-body"><span>Other text</span></div>
-                                </li>
+                        </div>
+
+                        <!--TOP MENU-->
+                        <div class="menu-container stop-swiping stop-swiping2 stop-swiping3">
+                            <ul>
+                                <li class="button"><span>RECENT</span></li>
+                                <li class="button"><span>HIP-HOP</span></li>
+                                <li class="button"><span>RAP</span></li>
+                                <li class="button"><span>R&B</span></li>
+                                <li class="button"><span>ALTERNATIVE</span></li>
+                                <li class="myslider"></li>
                             </ul>
                         </div>
 
-                        <div class="swiper-slide slide_main" id="slide_main" style="">
-                            <!--MAIN DISPLAY SWIPER-->
-                            <div class="swiper-container s2">
-                              <span class="stop-swiping2 overlay"  style=""></span>
-                              <span class="stop-swiping2 EN"  style=""></span>
-                              <div class="swiper-wrapper stop-swiping slide_main_wrapper" >
-                                <div class="swiper-slide stop-swiping" id="slide_main_slide" >
-                                  
-                                  <div class="module"> 
-                                    <header>
-                                      <h1>
-                                        The Scene
-                                      </h1>
-                                    </header>
-                                  </div>
-                                  <img class="stop-swiping3"  width="100%" src="img/The Scene.jpg"/>
-                                  <img class="stop-swiping3"  width="100%" src="img/Dorondo.jpg"/>
-                                  <img  class="stop-swiping3" width="100%" src="img/Movie.jpg"/>
+                        <div class="swiper-wrapper">
 
-                                  <span onclick="swiper.slideTo(0)" class="btn button btn-default">Open Menu</span><br>
-                                  <button id="btn1">BTN1</button>
-                                  <div class="" style="height:200px !important;background-color: #000;color: #FFF;width:100% !important">
-                                  </div>
-                                  <span class="stop-swiping3" style="height:200px;background-color: #000;color: #FFF;width:100%">My Span</span>
+                            <div class="swiper-slide offcanvas_menu stop-swiping3" id="slide1" style="width:83%;overflow-y: scroll !important">
+                                <!--<span class="label-checkbox" onclick="swiper.slideTo(1)">Close Menu</span>-->
+                                <div class="sidebar-header header-cover" style="background-image: url(http://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg);">
+                                    <!-- Sidebar brand image -->
+                                    <div class="sidebar-image">
+                                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53474/atom_profile_01.jpg">
+                                    </div>
+                                    <!-- Sidebar brand name -->
+                                    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+                                        john.doe@gmail.com
+                                        <b class="caret"></b>
+                                    </a>
                                 </div>
-                                <div class="swiper-slide" >slide 2</div>
-                                <div class="swiper-slide">slide 3</div>
-                                <div class="swiper-slide">slide 4</div>
-                                <div class="swiper-slide">slide 5</div>
-                              </div>
+                                <ul class="menu_vert collapsible" data-collapsible="accordion">
+                                    <li>
+                                        <a href="#">
+                                            <i class="sidebar-icon md-inbox"></i>
+                                            Inbox
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="sidebar-icon md-star"></i>
+                                            Starred
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="sidebar-icon md-send"></i>
+                                            Sent Mail
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="sidebar-icon md-drafts"></i>
+                                            Drafts
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header"><span>First</span></div>
+                                        <div class="collapsible-body"><span>lorem ipsem test<br>lorem ipsem test</span></div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header"><span>Second</span></div>
+                                        <div class="collapsible-body"><span>Some text 2</span></div>
+                                    </li>
+                                    <li>
+                                        <div class="collapsible-header"><span>Third</span></div>
+                                        <div class="collapsible-body"><span>lorem ipsem test<br>lorem ipsem test<br>lorem ipsem test<br>lorem ipsem test</span></div>
+                                    </li>
+                                    <li><a href="#home">Home</a></li>
+                                    <li><a href="#news">News</a></li>
+                                    <li><a href="#contact">Contact</a></li>
+                                    <li><a href="#about">About</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="swiper-slide slide_main" id="slide_main" style="">
+                                <!--MAIN DISPLAY SWIPER-->
+                                <div class="swiper-container s2">
+                                    <span class="stop-swiping2 overlay"  style=""></span>
+                                    <span class="stop-swiping2 EN"  style=""></span>
+                                    <div class="swiper-wrapper stop-swiping slide_main_wrapper" >
+                                        <div class="swiper-slide stop-swiping" id="slide_main_slide" >
+
+                                            <div class="module">
+                                                <header>
+                                                    <h1>
+                                                        The Scene
+                                                    </h1>
+                                                </header>
+                                            </div>
+                                            <img class="stop-swiping3"  width="100%" src="img/The Scene.jpg"/>
+                                            <img class="stop-swiping3"  width="100%" src="img/Dorondo.jpg"/>
+                                            <img  class="stop-swiping3" width="100%" src="img/Movie.jpg"/>
+
+                                            <span onclick="swiper.slideTo(0)" class="btn button btn-default">Open Menu</span><br>
+                                            <button id="btn1">BTN1</button>
+                                            <div class="" style="height:200px !important;background-color: #000;color: #FFF;width:100% !important">
+                                            </div>
+                                            <span class="stop-swiping3" style="height:200px;background-color: #000;color: #FFF;width:100%">My Span</span>
+                                        </div>
+                                        <div class="swiper-slide" >slide 2</div>
+                                        <div class="swiper-slide">slide 3</div>
+                                        <div class="swiper-slide">slide 4</div>
+                                        <div class="swiper-slide">slide 5</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <!-- Path to Framework7 Library JS-->
-    <script type="text/javascript" src="dist/js/framework7.min.js"></script>
-    <!-- Path to your app js-->
-    <script type="text/javascript" src="js/my-app.js"></script>
-    <!--Bootstrap References-->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-    </script>
+</div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<!--jQuery References-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+<!-- Path to Framework7 Library JS-->
+<script type="text/javascript" src="dist/js/framework7.min.js"></script>
+<!-- Path to your app js-->
+<script type="text/javascript" src="js/my-app.js"></script>
+<!--Bootstrap References-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    app.initialize();
+</script>
 </body>
 
 </html>

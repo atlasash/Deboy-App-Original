@@ -586,6 +586,29 @@ ul.menu_vert li a {
     text-decoration: none !important;
 }
 
+
+.collapsible-header{
+  padding-left: 16px !important;
+  padding-right: 56px !important;
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+  font-weight: 500 !important;
+  font-size: 22px !important;
+  color: #000 !important;
+  text-align: left !important;
+}
+
+.collapsible-body {
+  padding-left: 20px !important;
+  padding-right: 56px !important;
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+  font-weight: normal !important;
+  font-size: 20px !important;
+  text-align: left !important;
+  color: #000 !important;
+}
+
 /* Change the link color on hover */
 ul.menu_vert li a:hover {
     /*background-color: #555;
