@@ -55,18 +55,20 @@
 <body onload="swiper.slideTo(1);">
 <!-- Views -->
 <div class="views" data-enhance="false">
-    <!-- Your main view, should have "view-main" class -->
+    <!-- main view, should have "view-main" class -->
     <div class="view view-main">
-
-
+        <!--MAIN CONTAINER SWIPER (S8)-->
         <div class="swiper-container s8">
             <div class="swiper-wrapper" style="background: #e62117 !important;" >
+                <!--DRAGGABLE HEADER (SLIDE)-->
                 <div class="swiper-slide top_tab  button" style="">
                     <i class="fa fa-bars" aria-hidden="true" id="menu_icon" onclick="swiper.slideTo(0)" style="color:#FFF;float: left;padding: 10px;font-size:30px"></i>
                 </div>
+                <!--MAIN SLIDE (SLIDE)-->
                 <div class="swiper-slide" style="height: 100%">
+                    <!--MAIN SWIPER (S1)-->
                     <div class="swiper-container s1">
-
+                        <!--MAIN DISPLAY CLONE SWIPER (S3)-->
                         <div class="swiper-container stop-swiping stop-swiping2 s3">
                             <div class="swiper-wrapper clone-wrapper" style="display: none;">
                                 <div class="swiper-slide clone-slide my-slide-duplicate"></div>
@@ -86,7 +88,7 @@
                         </div>
 
                         <div class="swiper-wrapper">
-
+                            <!--OFF CANVAS MENU SLIDE-->
                             <div class="swiper-slide offcanvas_menu stop-swiping3" id="slide1" style="width:83%;overflow-y: scroll !important">
                                 <!--<span class="label-checkbox" onclick="swiper.slideTo(1)">Close Menu</span>-->
                                 <div class="sidebar-header header-cover" style="background-image: url(http://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg);">
@@ -144,14 +146,17 @@
                                 </ul>
                             </div>
 
+                            <!--MAIN DISPLAY SLIDE-->
                             <div class="swiper-slide slide_main" id="slide_main" style="">
-                                <!--MAIN DISPLAY SWIPER-->
+                                <!--MAIN DISPLAY SWIPER (S2)-->
                                 <div class="swiper-container s2">
+                                    <!--OVERLAY DURING OFF CANVAS-->
                                     <span class="stop-swiping2 overlay"  style=""></span>
+                                    <!--ENABLE FOR OFF CANVAS-->
                                     <span class="stop-swiping2 EN"  style=""></span>
+                                    <!--MAIN DISPLAY SLIDES WRAPPER-->
                                     <div class="swiper-wrapper stop-swiping slide_main_wrapper" >
                                         <div class="swiper-slide stop-swiping" id="slide_main_slide" >
-
                                             <div class="module">
                                                 <header>
                                                     <h1>
