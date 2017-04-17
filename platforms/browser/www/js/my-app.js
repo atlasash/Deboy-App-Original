@@ -1,5 +1,129 @@
 
+
+// Sidebar toggle
+//
+// -------------------
 $(document).ready(function() {
+  
+    var overlay = $('.sidebar-overlay');
+
+    $('.sidebar-toggle').on('click', function() {
+        var sidebar = $('#sidebar');
+        sidebar.toggleClass('open');
+        if ((sidebar.hasClass('sidebar-fixed-left') || sidebar.hasClass('sidebar-fixed-right')) && sidebar.hasClass('open')) {
+            overlay.addClass('active');
+        } else {
+            overlay.removeClass('active');
+        }
+    });
+
+    overlay.on('click', function() {
+        $(this).removeClass('active');
+        $('#sidebar').removeClass('open');
+    });
+});
+
+// Sidebar constructor
+//
+// -------------------
+$(document).ready(function() {
+
+    var sidebar = $('#sidebar');
+    var sidebarHeader = $('#sidebar .sidebar-header');
+    var sidebarImg = sidebarHeader.css('background-image');
+    var toggleButtons = $('.sidebar-toggle');
+
+    // Hide toggle buttons on default position
+    toggleButtons.css('display', 'none');
+    $('body').css('display', 'table');
+
+
+    // Sidebar position
+    $('#sidebar-position').change(function() {
+        var value = $( this ).val();
+        sidebar.removeClass('sidebar-fixed-left sidebar-fixed-right sidebar-stacked').addClass(value).addClass('open');
+        if (value == 'sidebar-fixed-left' || value == 'sidebar-fixed-right') {
+            $('.sidebar-overlay').addClass('active');
+        }
+        // Show toggle buttons
+        if (value != '') {
+            toggleButtons.css('display', 'initial');
+            $('body').css('display', 'initial');
+        } else {
+            // Hide toggle buttons
+            toggleButtons.css('display', 'none');
+            $('body').css('display', 'table');
+        }
+    });
+
+    // Sidebar theme
+    $('#sidebar-theme').change(function() {
+        var value = $( this ).val();
+        sidebar.removeClass('sidebar-default sidebar-inverse sidebar-colored sidebar-colored-inverse').addClass(value)
+    });
+
+    // Header cover
+    $('#sidebar-header').change(function() {
+        var value = $(this).val();
+
+        $('.sidebar-header').removeClass('header-cover').addClass(value);
+
+        if (value == 'header-cover') {
+            sidebarHeader.css('background-image', sidebarImg)
+        } else {
+            sidebarHeader.css('background-image', '')
+        }
+    });
+});
+
+/**
+ * Created by Kupletsky Sergey on 08.09.14.
+ *
+ * Add JQuery animation to bootstrap dropdown elements.
+ */
+
+(function($) {
+    var dropdown = $('.dropdown');
+
+    // Add slidedown animation to dropdown
+    dropdown.on('show.bs.dropdown', function(e){
+        $(this).find('.dropdown-menu').first().stop(true, true).slideDown();
+    });
+
+    // Add slideup animation to dropdown
+    dropdown.on('hide.bs.dropdown', function(e){
+        $(this).find('.dropdown-menu').first().stop(true, true).slideUp();
+    });
+})(jQuery);
+
+
+(function(removeClass) {
+
+  jQuery.fn.removeClass = function( value ) {
+    if ( value && typeof value.test === "function" ) {
+      for ( var i = 0, l = this.length; i < l; i++ ) {
+        var elem = this[i];
+        if ( elem.nodeType === 1 && elem.className ) {
+          var classNames = elem.className.split( /\s+/ );
+
+          for ( var n = classNames.length; n--; ) {
+            if ( value.test(classNames[n]) ) {
+              classNames.splice(n, 1);
+            }
+          }
+          elem.className = jQuery.trim( classNames.join(" ") );
+        }
+      }
+    } else {
+      removeClass.call(this, value);
+    }
+    return this;
+  }
+})(jQuery.fn.removeClass);
+
+
+$(document).ready(function() {
+
 
   $(".menu-container ul li").click(function(e) {
 
@@ -49,14 +173,7 @@ $(document).ready(function() {
       }
       //alert("scrolling");
   });
-  /*
-  setInterval(function() {
-      if (didScroll) {
-          hasScrolled();
-          didScroll = false;
-      }
-  }, 50);
-  */
+
 
   function hasScrolled() {
 
@@ -78,15 +195,6 @@ $(document).ready(function() {
     if(temp_menu_top <= 0 && temp_menu_top >= -51){
       swiper8.setWrapperTranslate(sum);
     }
-          /*
-          if(temp_menu_top < -51){
-              swiper8.setWrapperTranslate(-51);
-          }
-          if(temp_menu_top > 0){
-              swiper8.setWrapperTranslate(0);
-          }
-          */
-
 
 
     if (st > lastScrollTop){
@@ -117,83 +225,38 @@ $(document).ready(function() {
     lastScrollTop = st;
     lastUpscroll = upscroll;
   }
-
-  /*
-  $('.tab').click(function () {
-    $('.tabopen').removeClass('tabopen');
-    $(this).addClass('tabopen');
-  });
-
-
-  $("#tab1").hover(
-    function () {
-    $('#tab1').animate({
-      'background-color': '#d81f16'
-    },200);   $('#tab1').animate({
-      'background-color': '#e62117'
-    },200);
-    }, 
-    function () {
-      $('#tab1').animate({
-        'background-color': '#e62117'
-      },500);
-    }
-  );
-
-  $("#tab2").hover(
-    function () {
-    $('#tab2').animate({
-      'background-color': '#d81f16'
-    },200);   $('#tab2').animate({
-      'background-color': '#e62117'
-    },200);
-    }, 
-    function () {
-      $('#tab2').animate({
-        'background-color': '#e62117'
-      },500);
-    }
-  );
-
-  $("#tab3").hover(function () {
-    $('#tab3').animate({
-      'background-color': '#d81f16'
-    },200);   $('#tab3').animate({
-      'background-color': '#e62117'
-    },200);
-  }, 
-  function () {
-    $('#tab3').animate({
-      'background-color': '#e62117'
-    },500);
-  });
-
-  $("#tab4").hover(function () {
-    $('#tab4').animate({
-      'background-color': '#d81f16'
-    },200);   $('#tab4').animate({
-      'background-color': '#e62117'
-    },200);
-  }, 
-  function () {
-    $('#tab4').animate({
-      'background-color': '#e62117'
-    },500);
-  });
-
-
-  $("#settings1").hover(function () {
-    $('#settings1').stop(true).animate({
-      'background-color': '#dddddd'
-    });
-  }, 
-  function () {
-    $('#settings1').stop(true).animate({
-      'background-color': '#FFFFFF'
-    });
-  });
-  */
 });
+
+
+var rtime;
+var timeout = false;
+var delta = 200;
+$(window).resize(function() {
+
+    //to initialize main swiper
+    swiper.slideTo(0);
+    $(".myslider").css({
+      transition: "all 0.3s",
+      width: $(".menu-container ul li").eq(swiper2.activeIndex).width() + "px" ,
+      left: $(".menu-container ul li").eq(swiper2.activeIndex).position().left + "px" 
+    });
+    rtime = new Date();
+    if (timeout === false) {
+        timeout = true;
+        setTimeout(resizeend, delta);
+    }
+});
+
+//function to perform after resize window
+function resizeend() {
+    if (new Date() - rtime < delta) {
+        setTimeout(resizeend, delta);
+    } else {
+        timeout = false;
+        //to reinitialize main swiper
+        swiper.slideTo(1);
+    }               
+}
 
 // Initialize your app
 var myApp = new Framework7({
@@ -449,14 +512,6 @@ var swiper = myApp.swiper('.s1',{
   }
 });
 
-$(window).resize(function(){
-  var ww = $(".s1").height();
-  $(".s3").height(ww);
-  swiper.reInit();
-  swiper2.reInit();
-  swiper3.reInit();
-})
-
 swiper8.on('onTransitionEnd', function () {
 
   swiper8.params.followFinger = true;
@@ -594,7 +649,6 @@ function change_state(){
 
 function disableNext(){
   //setTimeout(function(){
-
 
   if(swiper.activeIndex == '1'){ 
     //swiper.params.allowSwipeToNext = false;
