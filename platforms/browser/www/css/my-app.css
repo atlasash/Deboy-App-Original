@@ -1009,8 +1009,11 @@ ul.menu_vert li a:hover {
       .sidebar .sidebar-nav li {
         position: relative;
         list-style-type: none;
+        width: 100%;
       }
       .sidebar .sidebar-nav li a {
+        font-size: medium;
+        width: 100%;
         position: relative;
         cursor: pointer;
         user-select: none;
@@ -1030,7 +1033,7 @@ ul.menu_vert li a:hover {
         -webkit-transition: all 0.2s ease-in-out;
         -o-transition: all 0.2s ease-in-out;
         transition: all 0.2s ease-in-out;
-        float: left;
+        text-align: left;
       }
       .sidebar .sidebar-nav li a:hover,
       .sidebar .sidebar-nav li a:focus {
