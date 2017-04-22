@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Demo with jQuery</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="description" content="Demo project with jQuery">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">	
+		<style type="text/css">
+      body {
+        margin: 0;
+        background: #333;
+        color: #000;
+      }
+      .followMeBar {
+        background: #fff;
+        border-bottom: solid 1px #111;
+        border-top: solid 1px #444;
+        padding: 1%;
+        position: relative;
+        z-index: 1;
+        height: 65px;
+      }
+      .followMeBar.fixed {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 0;
+      }
+      .followMeBar.fixed.absolute {
+        position: absolute;
+      }
+      ::-webkit-scrollbar { 
+        display: none; 
+      }
+		</style>
+	</head>
+	<body>
+<div class="followMeBar">Atlasash</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="followMeBar">Prissy</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="followMeBar">c</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="followMeBar">d</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="followMeBar">e</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="followMeBar">f</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="followMeBar">g</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="followMeBar">h</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="followMeBar">i</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="followMeBar">j</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="followMeBar">k</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="followMeBar">l</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="followMeBar">m</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="followMeBar">n</div>
+	</body>
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+$(document).ready(function(){
+  // Instagram-like sticky header
+  function stickyTitles(stickies) {
+    this.load = function() {
+      stickies.each(function(){
+        var thisSticky = $(this).wrap('<div class="followWrap" />');
+        thisSticky.parent().height(thisSticky.outerHeight());
+        $.data(thisSticky[0], 'pos', thisSticky.offset().top);
+      });
+    }
+
+    this.scroll = function() {
+      stickies.each(function(i){
+        var thisSticky = $(this),
+            nextSticky = stickies.eq(i+1),
+            prevSticky = stickies.eq(i-1),
+            pos = $.data(thisSticky[0], 'pos');
+
+        if (pos <= $(window).scrollTop()) {
+          
+          thisSticky.addClass("fixed");
+
+          if (nextSticky.length > 0 && thisSticky.offset().top >= $.data(nextSticky[0], 'pos') - thisSticky.outerHeight()) {
+            thisSticky.addClass("absolute").css("top", $.data(nextSticky[0], 'pos') - thisSticky.outerHeight());
+          }
+
+        } else {
+          
+          thisSticky.removeClass("fixed");
+          
+          if (prevSticky.length > 0 && $(window).scrollTop() <= $.data(thisSticky[0], 'pos')  - prevSticky.outerHeight()) {
+            prevSticky.removeClass("absolute").removeAttr("style");
+          }       
+        }
+      });     
+    }
+  }
+  
+  var newStickies = new stickyTitles($(".followMeBar"));
+  
+  newStickies.load();
+  
+  $(window).on("scroll", function() {
+    newStickies.scroll();
+  });
+});
+	</script>
+</html>
