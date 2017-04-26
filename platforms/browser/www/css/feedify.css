@@ -1,0 +1,22 @@
+/* Feedify v1.1.2 by Sarah Dayan | https://sarahdayan.github.io/feedify */
+.feedify .feedify-item {
+  position: relative;
+}
+.feedify .feedify-item .feedify-item-header {
+  z-index: 100;
+  transform: translate3d(0, 0, 0);
+}
+.feedify .feedify-item.fixed .feedify-item-header {
+  position: absolute;
+}
+.feedify .feedify-item.bottom .feedify-item-header {
+  position: absolute;
+  top: 0;
+}
+
+.feedify-item-header-main {
+  position: fixed !important;
+  top: 50px;
+  z-index: 200 !important;
+  width:100%;
+}
