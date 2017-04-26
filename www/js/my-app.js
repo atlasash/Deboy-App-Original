@@ -728,3 +728,4 @@ function slide_to_main(slide_num){
 function go_to_main(num){
   swiper2.slideTo(num); 
 }
+

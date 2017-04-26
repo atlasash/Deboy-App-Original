@@ -264,6 +264,9 @@
     </div>
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/feedify.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+
     <script>
 
     $(function() {
@@ -279,19 +282,19 @@
       $(window).scroll(function(event){
           didScroll = true;
           if (didScroll) {
-              hasScrolled();
+              hasScrolled_iframe();
               didScroll = false;
           }
           //alert("scrolling");
       });
 
 
-      function hasScrolled() {
+      function hasScrolled_iframe() {
 
         var st = $(window).scrollTop();
         var del = lastScrollTop - st;
 
-        //parent.hasScrolled2(del);
+        parent.hasScrolled2(del);
         //$('#log').html(del);
         lastScrollTop = st;
       }
