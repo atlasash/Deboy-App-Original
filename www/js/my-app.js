@@ -224,6 +224,18 @@ $(document).ready(function() {
     lastScrollTop = st;
     lastUpscroll = upscroll;
   }
+
+  function hasScrolled2(del2) {
+
+    temp_menu_top = $(".s8 .swiper-wrapper .swiper-slide").eq(0).offset().top;
+    var sum = temp_menu_top + del2;
+    if(sum > 0){ sum=0;} 
+    if(sum< - 51){sum=-51;}
+    if(temp_menu_top <= 0 && temp_menu_top >= -51){
+      swiper8.setWrapperTranslate(sum);
+    }
+  }
+  
 });
 
 
