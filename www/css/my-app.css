@@ -93,16 +93,7 @@ body {
   display:none;
 }
 
-#sticky_frame{
-  position: absolute;
-  top: 0;
-  margin: 0;
-  padding:0;
-  border: 0 none;
-  width: 100%;
-  height:100vh;
-  display: block;
-}
+
 
 .menu-container ul {
   font-size: 0;

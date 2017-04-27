@@ -20,36 +20,36 @@ body {
   transition: all 0.2s ease-out;
 }
 .feedify .feedify-item .feedify-item-header {
-  padding: 20px 0;
+  padding: 15px 0;
   background: #fff;
   z-index: 100;
 }
 .feedify .feedify-item .feedify-item-header h1 {
   margin: 0;
   font-size: 20px;
-  line-height: 80px;
+  line-height: 50px;
   font-weight: 600;
 }
 .feedify .feedify-item .feedify-item-header h2 {
   margin: 0;
   font-size: 16px;
   color: #bbb;
-  line-height: 80px;
+  line-height: 50px;
   font-weight: 600;
 }
 .feedify .feedify-item .feedify-item-header img {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   margin-right: 20px;
 }
 @media (max-width: 767px) {
   .feedify .feedify-item .feedify-item-header h1 {
     font-size: 18px;
-    line-height: 60px;
+    line-height: 50px;
   }
   .feedify .feedify-item .feedify-item-header img {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
   }
 }
 .feedify .feedify-item footer {
@@ -77,6 +77,43 @@ body {
   border-bottom: 1px solid #eee;
 }
 
+
+.feedify-item-header-main {
+  padding: 20px 0;
+  background: #fff;
+  z-index: 300;
+  position: fixed;
+  top: 0;
+}
+.feedify-item-header-main h1 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 80px;
+  font-weight: 600;
+}
+.feedify-item-header-main h2 {
+  margin: 0;
+  font-size: 16px;
+  color: #bbb;
+  line-height: 80px;
+  font-weight: 600;
+}
+.feedify-item-header-main img {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+}
+@media (max-width: 767px) {
+  .feedify-item-header-main h1 {
+    font-size: 18px;
+    line-height: 60px;
+  }
+  .feedify-item-header-main img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
 @font-face {
   font-family: 'Thinlines';
   src: url("../fonts/thinlines/thinlines.eot");
@@ -84,6 +121,7 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
 [class^='icon-']:before, [class*=' icon-']:before {
   font-family: 'Thinlines';
   font-style: normal;
